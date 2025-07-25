@@ -43,9 +43,9 @@ enum class SensorType
   TypeK = 15,
   Ble = 16,
   MaverickRadio = 17,
-  SousVide = 18,
+  Connect = 18,
   Raeucherofen = 19, 
-  Connect = 20
+  SousVide = 20
 };
 
 typedef struct
@@ -74,6 +74,6 @@ const SensorTypeInfoType sensorTypeInfo[NUM_OF_TYPES] = {
     {SensorType::TypeK, "Typ K", true},
     {SensorType::Ble, "Bluetooth", true},
     {SensorType::MaverickRadio, "Maverick", true},
+    {SensorType::Connect, "Connect", true},
     {SensorType::SousVide, "SousVide graues Kabel", false},
-    {SensorType::Raeucherofen, "Räucherofen blaues Kabel", false},
-    {SensorType::Connect, "Connect", true}};
+    {SensorType::Raeucherofen, "Räucherofen blaues Kabel", false}};
