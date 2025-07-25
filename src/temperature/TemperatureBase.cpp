@@ -471,16 +471,24 @@ float TemperatureBase::calcTemperatureNTC(uint16_t rawValue, SensorType type)
     c = 2.1375541e-06;
     break;
   case SensorType::NTC5K3A1B: // NTC 5K3A1B (orange Kopf)
-    Rn = 5;
-    a = 0.0033555;
-    b = 0.0002570;
-    c = 0.00000243;
+    Rn = 10000;
+    a = 9.237664171364702e-04;
+    b = 2.493226247312813e-04;
+    c = 1.6671234957193866e-07;
+    //Rn = 5;
+    //a = 0.0033555;
+    //b = 0.0002570;
+    //c = 0.00000243;
     break;
   case SensorType::ThermoWorks: // ThermoWorks
-    Rn = 97.31;
-    a = 3.3556417e-03;
-    b = 2.5191450e-04;
-    c = 2.3606960e-06;
+    Rn = 10000;
+    a = 1.0594200770946756e-03;
+    b = 2.4689765687199597e-04;
+    c = 3.5840074395813976e-08;
+    //Rn = 97.31;
+    //a = 3.3556417e-03;
+    //b = 2.5191450e-04;
+    //c = 2.3606960e-06;
     break;
 case SensorType::SousVide: // SousVide
     Rn = 10000;
