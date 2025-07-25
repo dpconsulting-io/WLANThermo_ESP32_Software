@@ -45,7 +45,7 @@ enum class SensorType
   MaverickRadio = 17,
   Connect = 18,
   Raeucherofen = 19, 
-  SousVide = 21
+  SousVide = 20
 };
 
 typedef struct
