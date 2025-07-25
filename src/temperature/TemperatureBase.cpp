@@ -484,14 +484,14 @@ float TemperatureBase::calcTemperatureNTC(uint16_t rawValue, SensorType type)
     break;
 case SensorType::SousVide: // SousVide
     Rn = 10000;
-    a = 0.0009237664171364702
-    b = 0.0002493226247312813
+    a = 9.237664171364702e10−4
+    b = 2.493226247312813e10−4
     c = 1.6671234957193866e-07
     break;
 case SensorType::Raeucherofen: // Raeucherofen
     Rn = 10000;
-    a = 0.0010594200770946756
-    b = 0.00024689765687199597
+    a = 1,0594200770946756e10-3
+    b = 2,4689765687199597e10-4
     c = 3.5840074395813976e-08
     break;
   default:
