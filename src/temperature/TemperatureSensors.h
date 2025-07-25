@@ -75,5 +75,5 @@ const SensorTypeInfoType sensorTypeInfo[NUM_OF_TYPES] = {
     {SensorType::Ble, "Bluetooth", true},
     {SensorType::MaverickRadio, "Maverick", true},
     {SensorType::SousVide, "SousVide graues Kabel", false},
-    {SensorType::Raeucherofen, "Räucherofen blaues Kabel", false}
+    {SensorType::Raeucherofen, "Räucherofen blaues Kabel", false},
     {SensorType::Connect, "Connect", true}};
