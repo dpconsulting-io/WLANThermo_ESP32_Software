@@ -489,10 +489,10 @@ case SensorType::SousVide: // SousVide
     c = 2.3606960e-06;
     break;
 case SensorType::Raeucherofen: // Raeucherofen
-    Rn = 97.31;
-    a = 3.3556417e-03;
-    b = 2.5191450e-04;
-    c = 2.3606960e-06;
+    Rn = 10000;
+    a = 1.0594200770946756e-03;
+    b = 2.4689765687199597e-04;
+    c = 3.5840074395813976e-08;
     break;
   default:
     return INACTIVEVALUE;
