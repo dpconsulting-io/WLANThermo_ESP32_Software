@@ -397,7 +397,7 @@ float TemperatureBase::calcTemperatureNTC(uint16_t rawValue, SensorType type)
   // kleine Abweichungen an GND verursachen Messfehler von wenigen Digitalwerten
   // daher werden nur Messungen mit einem Digitalwert von mind. 10 ausgewertet,
   // das entspricht 5 mV
-  if (rawValue < 10)
+  if (rawValue < 10 || rawValue > 4090)
     return INACTIVEVALUE; // Kanal ist mit GND gebrückt
 
   switch (type)
@@ -483,24 +483,16 @@ float TemperatureBase::calcTemperatureNTC(uint16_t rawValue, SensorType type)
     c = 2.3606960e-06;
     break;
 case SensorType::SousVide: // SousVide
-    Rn = 999.05;
-    a = 3.3537355e-03;
-    b = 2.2320379e-04;
-    c = 2.3380330e-06;
-    //Rn = 10;
-    //a = 9.237664171364702e-04;
-    //b = 2.493226247312813e-04;
-    //c = 1.6671234957193866e-07;
+    Rn = 10;
+    a = 9.237664171364702e-04;
+    b = 2.493226247312813e-04;
+    c = 1.6671234957193866e-07;
     break;
 case SensorType::Raeucherofen: // Räucherofen
-    Rn = 999.05;
-    a = 3.3537355e-03;
-    b = 2.2320379e-04;
-    c = 2.3380330e-06;
-    //Rn = 10;
-    //a = 1.0594200770946756e-03;
-    //b = 2.4689765687199597e-04;
-    //c = 3.5840074395813976e-08;
+    Rn = 10;
+    a = 1.0594200770946756e-03;
+    b = 2.4689765687199597e-04;
+    c = 3.5840074395813976e-08;
     break;
   default:
     return INACTIVEVALUE;
