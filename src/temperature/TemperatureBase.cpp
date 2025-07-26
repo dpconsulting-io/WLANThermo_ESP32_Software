@@ -32,12 +32,28 @@
 
 const static String colors[MAX_COLORS] = {"#0C4C88", "#22B14C", "#EF562D", "#FFC100", "#A349A4", "#804000", "#5587A2", "#5C7148"};
 TemperatureCalculation_t TemperatureBase::typeFunctions[NUM_OF_TYPES] = {
-    TemperatureBase::calcTemperatureNTC, TemperatureBase::calcTemperatureNTC, TemperatureBase::calcTemperatureNTC,
-    TemperatureBase::calcTemperatureNTC, TemperatureBase::calcTemperatureNTC, TemperatureBase::calcTemperatureNTC,
-    TemperatureBase::calcTemperatureNTC, TemperatureBase::calcTemperatureNTC, TemperatureBase::calcTemperatureNTC,
-    TemperatureBase::calcTemperatureNTC, TemperatureBase::calcTemperatureNTC, TemperatureBase::calcTemperatureNTC,
-    TemperatureBase::calcTemperaturePTx, TemperatureBase::calcTemperaturePTx, TemperatureBase::calcTemperatureNTC,
-    NULL, NULL};
+    TemperatureBase::calcTemperatureNTC,  // 0  - Maverick
+    TemperatureBase::calcTemperatureNTC,  // 1  - FantastNeu  
+    TemperatureBase::calcTemperatureNTC,  // 2  - Fantast
+    TemperatureBase::calcTemperatureNTC,  // 3  - iGrill2
+    TemperatureBase::calcTemperatureNTC,  // 4  - ET73
+    TemperatureBase::calcTemperatureNTC,  // 5  - PERFEKTION
+    TemperatureBase::calcTemperatureNTC,  // 6  - _50K
+    TemperatureBase::calcTemperatureNTC,  // 7  - INKBIRD
+    TemperatureBase::calcTemperatureNTC,  // 8  - NTC100K6A1B
+    TemperatureBase::calcTemperatureNTC,  // 9  - Weber6743
+    TemperatureBase::calcTemperatureNTC,  // 10 - Santos
+    TemperatureBase::calcTemperatureNTC,  // 11 - NTC5K3A1B
+    TemperatureBase::calcTemperaturePTx,  // 12 - PT100
+    TemperatureBase::calcTemperaturePTx,  // 13 - PT1000
+    TemperatureBase::calcTemperatureNTC,  // 14 - ThermoWorks
+    NULL,                                 // 15 - TypeK (fixed sensor)
+    NULL,                                 // 16 - Ble (fixed sensor)
+    NULL,                                 // 17 - MaverickRadio (fixed sensor)
+    TemperatureBase::calcTemperatureNTC,  // 18 - SousVide (DEIN ERSTER 10K NTC!)
+    TemperatureBase::calcTemperatureNTC,  // 19 - Raeucherofen (DEIN ZWEITER 10K NTC!)
+    NULL                                  // 20 - Connect (fixed sensor)
+};
 
 TemperatureBase::TemperatureBase()
 {
