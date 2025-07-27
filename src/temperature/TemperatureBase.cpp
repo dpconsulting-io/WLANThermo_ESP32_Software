@@ -407,7 +407,8 @@ TemperatureUnit TemperatureBase::getUnit()
 float TemperatureBase::calcTemperatureNTC(uint16_t rawValue, SensorType type)
 {
 
-  float Rmess = 47;
+  //float Rmess = 47;
+  float Rmess = 10;
   float a, b, c, Rn;
 
   // kleine Abweichungen an GND verursachen Messfehler von wenigen Digitalwerten
