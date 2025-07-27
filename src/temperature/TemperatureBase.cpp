@@ -515,6 +515,10 @@ case SensorType::Raeucherofen: // Räucherofen
   }
 
   float Rt = Rmess * ((4096.0 / (4096 - rawValue)) - 1);
+print("Serial.print(\"Debug - rawValue: \"); Serial.println(rawValue);")
+print("Serial.print(\"Debug - Rt (kOhm): \"); Serial.println(Rt);")
+print("Serial.print(\"Debug - v (log): \"); Serial.println(v);")
+print("Serial.print(\"Debug - erg (°C): \"); Serial.println(erg);")
   float v = log(Rt / Rn);
   float erg = (1 / (a + b * v + c * v * v)) - 273.15;
 
