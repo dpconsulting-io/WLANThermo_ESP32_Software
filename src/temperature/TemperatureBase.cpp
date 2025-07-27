@@ -522,7 +522,7 @@ print("Serial.print(\"Debug - erg (°C): \"); Serial.println(erg);")
   float v = log(Rt / Rn);
   float erg = (1 / (a + b * v + c * v * v)) - 273.15;
 
-  return (erg > LOWEST_VALUE) ? erg : INACTIVEVALUE;
+  return (rawValue + "!" + Rt + "!" + v  > LOWEST_VALUE) ? erg : INACTIVEVALUE;
 }
 
 float TemperatureBase::calcTemperaturePTx(uint16_t rawValue, SensorType type)
