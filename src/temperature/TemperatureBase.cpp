@@ -407,8 +407,9 @@ TemperatureUnit TemperatureBase::getUnit()
 float TemperatureBase::calcTemperatureNTC(uint16_t rawValue, SensorType type)
 {
 
-  //float Rmess = 47;
-  float Rmess = 10;
+  float Rmess = 47;
+    float rawValue2 = rawValue;
+  //float Rmess = 10;
   float a, b, c, Rn;
 
   // kleine Abweichungen an GND verursachen Messfehler von wenigen Digitalwerten
@@ -501,25 +502,27 @@ float TemperatureBase::calcTemperatureNTC(uint16_t rawValue, SensorType type)
     break;
 case SensorType::SousVide: // SousVide
    Rn = 10;
-    a = 1.1253262818e-03;
-    b = 2.3423467520e-04;
-    c = 8.7579222670e-08;
+    a = 1.1296506673e-03;
+    b = 2.3379932256e-04;
+    c = 9.1279539194e-08;
+    rawValue2 = (float)rawValue * 3.3f / 4095.0f;
     break;
 case SensorType::Raeucherofen: // Räucherofen
     Rn = 10;
-    a = 1.1280862236e-03;
-    b = 2.3405465297e-04;
-    c = 9.0321555587e-08;
+    a = 1.1290239135e-03;
+    b = 2.3396088305e-04;
+    c = 9.0678930326e-08;
+    rawValue2 = (float)rawValue * 3.3f / 4095.0f;
     break;
   default:
     return INACTIVEVALUE;
   }
 
-  float Rt = Rmess * ((4096.0 / (4096 - rawValue)) - 1);
+  float Rt = Rmess * ((4096.0 / (4096 - rawValue2)) - 1);
   float v = log(Rt / Rn);
   float erg = (1 / (a + b * v + c * v * v)) - 273.15;
 
-  return (erg > LOWEST_VALUE) ? rawValue : INACTIVEVALUE;
+  return (erg > LOWEST_VALUE) ? erg : INACTIVEVALUE;
 }
 
 float TemperatureBase::calcTemperaturePTx(uint16_t rawValue, SensorType type)
