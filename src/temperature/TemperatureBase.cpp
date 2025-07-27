@@ -507,7 +507,7 @@ case SensorType::Raeucherofen: // Räucherofen blaues kabel
     Rn = 10;
     a = 1.1335e-03;
     b = 2.3423e-04;
-    C = 8.7757e-08;
+    c = 8.7757e-08;
     break;
   default:
     return INACTIVEVALUE;
