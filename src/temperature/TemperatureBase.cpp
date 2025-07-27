@@ -503,15 +503,11 @@ case SensorType::SousVide: // SousVide graues kabel
    a = 3.354175822064e-03;
    b = 2.569844839775e-04;
    c = 2.620027944264e-06;
-    //a = 3.354016e-03;  // Beispielwerte für NTC 10K 3435
-   //b = 2.56985e-04;
-   //c = 2.62013e-06;
-    break;
 case SensorType::Raeucherofen: // Räucherofen blaues kabel
     Rn = 10;
-    a = 2.7772585607e-3;
-    b = 2.4717458727e-4;
-    c = 6.1523957163e-7;
+    a = 1.1335e-03;
+    b = 2.3423e-04;
+    C = 8.7757e-08;
     break;
   default:
     return INACTIVEVALUE;
