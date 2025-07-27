@@ -518,7 +518,7 @@ case SensorType::Raeucherofen: // Räucherofen
   float v = log(Rt / Rn);
   float erg = (1 / (a + b * v + c * v * v)) - 273.15;
 
-  return (rawValue > LOWEST_VALUE) ? erg : INACTIVEVALUE;
+  return (erg > LOWEST_VALUE) ? rawValue : INACTIVEVALUE;
 }
 
 float TemperatureBase::calcTemperaturePTx(uint16_t rawValue, SensorType type)
