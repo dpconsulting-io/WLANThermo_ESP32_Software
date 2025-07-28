@@ -506,9 +506,9 @@ case SensorType::SousVide: // SousVide graues kabel
    break;
 case SensorType::Raeucherofen: // Räucherofen blaues kabel
     Rn = 10;
-    a = 0.0011388513229324538
-b = 0.00023271178666226175
-c = 9.24800834099767e-08
+    a = 1.117062313e-03;
+b = 2.356133222e-04;
+c = 0.8559299794e-07;
  //   a = 1.1027774175707238e-3; //otimiert für 10-140°C
   //  b = 2.395325479780571e-4; //otimiert für 10-140°C
    // c = 5.682833319905606e-08; //otimiert für 10-140°C
