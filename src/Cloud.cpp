@@ -55,7 +55,7 @@ enum
 
 uint8_t Cloud::serverurlCount = 3u;
 ServerData Cloud::serverurl[3] = {
-    {APISERVER, CHECKAPI, "api"},
+    {"api.github.com", "/repos/dpconsulting-io/WLANThermo_ESP32_Software/releases/latest", "api"},
     {APISERVER, CHECKAPI, "note"},
     {APISERVER, CHECKAPI, "cloud"}};
 
@@ -403,7 +403,7 @@ void Cloud::handleQueue()
     String url = (cloudRequest.urlIndex != CUSTOMLINK) ? String("http://" + serverurl[cloudRequest.urlIndex].host + "/") : config.customUrl;
 
     apiClient.onReadyStateChange(Cloud::onReadyStateChange, &requestDone);
-    apiClient.open("POST", url.c_str());
+    apiClient.open("GET", url.c_str());
     apiClient.setReqHeader("Connection", "close");
     apiClient.setReqHeader("User-Agent", "WLANThermo ESP32");
     apiClient.setReqHeader("Content-Type", "application/json");
